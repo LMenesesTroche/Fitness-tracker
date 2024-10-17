@@ -18,6 +18,10 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.rest-day {
+  background-color: #e50000; /* Color verde suave para días de descanso */
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
