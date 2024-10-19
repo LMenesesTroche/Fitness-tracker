@@ -1,22 +1,21 @@
+/* CSS General */
 .tracker-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 95vw;
-  height: 90vh;
+  height: 89vh;
   overflow: auto;
   padding: 20px;
-  /* background-color: brown; */
   background-color: #242424;
-
 }
 
+/* Rejilla de meses */
 .grid-header {
   display: flex;
   justify-content: space-between;
   width: 94%;
   margin-left: 37px;
-  /* background-color: #4caf50; */
 }
 
 .month-label {
@@ -26,21 +25,20 @@
   padding: 10px;
 }
 
+/* Contenedor de la rejilla de semanas */
 .grid-container {
   display: flex;
   flex-direction: row;
   width: 1180px;
   max-width: 100%;
-  /* background-color: #90caf9; */
+  /* background-col or: aqua; */
 }
 
 .week-labels {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* Esto es la distancia entre los dias de la semana y los cubios */
-  padding-right: 10px; 
-  /* background-color: aqua; */
+  padding-right: 10px;
 }
 
 .day-label {
@@ -52,7 +50,7 @@
 .weeks-grid {
   display: flex;
   flex-grow: 100;
-  /* overflow-x: auto; */
+  /* background-color: blue; */
 }
 
 .week-column {
@@ -99,11 +97,29 @@ button {
   transition: border-color 0.25s;
   margin-top: 20px;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* CSS para rotar la pantalla en dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  .day-box {
+    width: 9px;
+    height: 9px;
+    margin: 1px;
+  }
+  .day-label {
+    height: -20px;
+    font-size: 7px;
+  }
+  .grid-container {
+    margin-left: 40px;
+  }
 }
 
