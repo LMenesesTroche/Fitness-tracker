@@ -4,6 +4,7 @@ import { db } from '../../fireBaseConfig'; // Asegúrate de que la ruta esté co
 import './tracker.css';
 
 const daysInWeek = ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'];
+// const daysInWeek = ['Lun', '', 'Mie', '', 'Vie', '', 'Dom'];
 const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
 const weeksInYear = 52;
 

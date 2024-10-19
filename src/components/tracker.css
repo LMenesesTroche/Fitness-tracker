@@ -2,16 +2,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 95vw;
+  height: 90vh;
   overflow: auto;
   padding: 20px;
+  /* background-color: brown; */
+  background-color: #242424;
+
 }
 
 .grid-header {
   display: flex;
   justify-content: space-between;
-  width: 93%;
+  width: 94%;
+  margin-left: 37px;
+  /* background-color: #4caf50; */
 }
 
 .month-label {
@@ -24,8 +29,9 @@
 .grid-container {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 1180px;
   max-width: 100%;
+  /* background-color: #90caf9; */
 }
 
 .week-labels {
@@ -34,6 +40,7 @@
   justify-content: space-between;
   /* Esto es la distancia entre los dias de la semana y los cubios */
   padding-right: 10px; 
+  /* background-color: aqua; */
 }
 
 .day-label {
@@ -55,8 +62,8 @@
 }
 
 .day-box {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   margin: 3px;
   background-color: #e0e0e0;
   border-radius: 3px;
@@ -80,12 +87,23 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .day-box {
-    width: 15px;
-    height: 15px;
-  }
-  .month-label, .day-label {
-    font-size: 12px;
-  }
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin-top: 20px;
 }
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
