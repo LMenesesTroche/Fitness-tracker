@@ -1,49 +1,62 @@
 /* CSS General */
 .tracker-container {
   display: flex;
-  flex-direction: column;
+  /* Lo de abajo es para ordenar los elementos del contenedor de forma vertical */
+  flex-direction: column; 
+  /* Alinearlos al centro */
   align-items: center;
-  width: 95vw;
-  height: 89vh;
-  overflow: auto;
-  padding: 20px;
+  /* Los siguientes cuatro son para ponerlo bien al centro dentro del contendor de todo */
+  position: relative; /* Añadido */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Color de fondo */
   background-color: #242424;
 }
 
-/* Rejilla de meses */
+/* Caja de los nombres de los meses */
 .grid-header {
   display: flex;
   justify-content: space-between;
-  width: 94%;
-  margin-left: 37px;
+  /* Creo que esto sera muy util para alinearlos */
+  width: 75%;
+  /* margin-left: 1%; */
+  /* Color de fondo */
+
+  /* background-color: #4caf50; */
 }
 
+/* Los nombres de los meses */
 .month-label {
   width: calc(100% / 12);
   text-align: center;
   font-weight: bold;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
-/* Contenedor de la rejilla de semanas */
+/* Contenedor de nombres de semanas y cubitos */
 .grid-container {
   display: flex;
   flex-direction: row;
-  width: 1180px;
-  max-width: 100%;
-  /* background-col or: aqua; */
+  width: 80%;
+  /* background-color: #646cff; */
+  left: 0;
 }
 
+/* COntenedor de los nombres de los dias  */
 .week-labels {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-right: 10px;
+  /* Esto es para darle un poco de espacio entre los nomrbes de las semanas y los cubitos */
+  padding-right: 1%;
+  /* background-color: beige; */
 }
 
+/* Nombres de los dias */
 .day-label {
-  height: -20px;
-  font-size: 12px;
+  font-size: 70%;
   font-weight: bold;
 }
 
@@ -54,15 +67,17 @@
 }
 
 .week-column {
+  /* width: 80%; */
   display: flex;
   flex-direction: column;
-  margin: 1px;
+  /* background-color: #4caf50; */
 }
 
+/* CUbitos */
 .day-box {
-  width: 14px;
-  height: 14px;
-  margin: 3px;
+  width: 2.5vh;
+  height: 2.5vh;
+  margin: 0.4vh;
   background-color: #e0e0e0;
   border-radius: 3px;
   position: relative;
@@ -78,6 +93,7 @@
   background-color: #90caf9;
 }
 
+/* Arreglar esto */
 .reset-btn {
   margin-top: 20px;
   padding: 10px 20px;
@@ -85,6 +101,7 @@
   cursor: pointer;
 }
 
+/* Arreglar esto */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -109,17 +126,11 @@ button:focus-visible {
 
 /* CSS para rotar la pantalla en dispositivos móviles */
 @media only screen and (max-width: 768px) {
-  .day-box {
-    width: 9px;
-    height: 9px;
-    margin: 1px;
-  }
   .day-label {
-    height: -20px;
-    font-size: 7px;
+    font-size: 40%;
   }
-  .grid-container {
-    margin-left: 40px;
+  .month-label {
+    font-size: 50%;
   }
 }
 

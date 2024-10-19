@@ -12,5 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Elimina las restricciones de ancho y alto */
+  position: fixed; /* O absolute */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+ 
 }
