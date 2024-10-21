@@ -1,5 +1,6 @@
 /*
-!Hacer que se vaya moviendo como en git hub
+No son las variables de entorno
+
 
 
 
