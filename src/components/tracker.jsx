@@ -89,6 +89,7 @@ const ExerciseTracker = () => {
     day: null,
     existingExercise: null,
   });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -103,6 +104,17 @@ const ExerciseTracker = () => {
     };
 
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
   const handleDayClick = async (week, day) => {
@@ -226,7 +238,9 @@ const ExerciseTracker = () => {
               onChange={(selectedOption) =>
                 setSelectedExercise(selectedOption.value)
               }
+              isSearchable={!isMobile} // Desactiva la búsqueda si está en un dispositivo móvil
             />
+
             <div className="seccion-de-botones-modal">
               <button onClick={handleSubmit}>Confirmar</button>
               <button onClick={() => setShowModal(false)}>Cancelar</button>

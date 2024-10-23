@@ -148,6 +148,16 @@ select:focus {
   justify-content: center;
 }
 
+.select-read-only {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #6f67ff;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: default;
+}
+
 /* MEDIA QUERY PARA MÓVILES (Pantallas más pequeñas) */
 @media (max-width: 768px) {
   .tracker-container {
@@ -186,6 +196,7 @@ select:focus {
   button {
     font-size: 14px;
     padding: 0.5em 1em;
+    color:aliceblue;
   }
 
   .modal {
