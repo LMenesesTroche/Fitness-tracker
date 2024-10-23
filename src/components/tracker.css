@@ -78,19 +78,32 @@
   width: 2.5vh;
   height: 2.5vh;
   margin: 0.4vh;
-  background-color: #e0e0e0;
+  /* background-color: #e0e0e0; */
+  background-color: #3a3a3a; /* Fondo oscuro para los días */
   border-radius: 3px;
   position: relative;
   transition: background-color 0.3s;
   cursor: pointer;
 }
 
-.day-box.active {
-  background-color: #4caf50;
+.day-box:hover {
+  transform: scale(1.1); /* Efecto hover que agranda el cubo */
 }
 
+.day-box.active {
+  /* background-color: #4caf50; */
+  /* background-color: #823fff; */
+  background-color: #6e66ff; /* Morado neón para días activos */
+  box-shadow: 0 0 3px #7972ff; /* Efecto de neón */
+}
+
+
+
 .day-box:hover {
-  background-color: #90caf9;
+  /* background-color: #90caf9; */
+  background-color: #a87aff;
+  background-color: #5a53cf;
+
 }
 
 /* Arreglar esto */
@@ -106,6 +119,8 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
+  margin-left: 8px;
+  margin-right: 8px;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -124,13 +139,52 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* CSS para rotar la pantalla en dispositivos móviles */
-@media only screen and (max-width: 768px) {
-  .day-label {
-    font-size: 40%;
+h1 {
+  color: #ffffff; /* Tono morado neón para el título */
+  text-align: center; /* Alinear al centro */
+  font-family: 'Arial', sans-serif; /* Elige una fuente adecuada */
   }
-  .month-label {
-    font-size: 50%;
-  }
+
+
+.modal {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #222; /* Fondo oscuro */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #6e66ff; /* Sombra neón morada */
+}
+
+.modal-content h2 {
+  color: #ffffff;
+}
+
+select {
+  background-color: #1a1a1a;
+  color: #ffffff; /* Texto morado neón */
+  border: 1px solid #6f67ff;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+select:hover, select:focus {
+  border-color: #6f67ff; /* Cambia a otro tono de morado neón al enfocarse */
+}
+
+.seleccionar {
+  font-size: larger;
+}
+
+.seccion-de-botones-modal{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* background-color: #646cff; */
 }
 

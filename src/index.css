@@ -12,7 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  position: fixed; /* O absolute */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100vw;
