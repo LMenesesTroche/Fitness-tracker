@@ -10,7 +10,8 @@
   background-color: #242424;
 }
 .rectangulo-importante{
-  width: 77.5%;
+  width: 76%;
+  height: 13vw;
   /* background-color: chartreuse; */
 }
 
@@ -18,42 +19,51 @@
 .caja-nombres-meses {
   display: flex;
   justify-content: space-between;
-  width: 97%;
-  /* background-color: #ff0000; */
+  width: 96%;
+  height: auto;
   margin-left: auto; /* Empuja el contenedor hacia la derecha */
+  /* background-color: #ff0000; */
 }
 
 /* Los nombres de los meses */
-.month-label {
+.texto-meses {
   width: calc(97% / 12);
   text-align: center;
   font-weight: bold;
+  font-size: 1.3vw;
 }
 
 /* Contenedor de nombres de semanas y cubitos */
-.grid-container {
+.texto-semanas-y-cubitos {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 100%;
+  height: 10vw;
+  /* background-color: aliceblue; */
 }
 
 /* COntenedor de los nombres de los dias  */
-.week-labels {
+.contenedor-del-texto-dias {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-right: 1%;
+  height: 100%;
+  /* background-color: #5a53cf; */
 }
 
 /* Nombres de los dias */
-.day-label {
-  font-size: 70%;
+.texto-dias {
+  /* font-size: 70%; */
+  font-size: 0.8vw;
   font-weight: bold;
 }
 
 .weeks-grid {
   display: flex;
-  flex-grow: 100;
+  /* flex-grow: 100; */
+  /* background-color: brown; */
+  max-width: 100%;
 }
 
 .week-column {
@@ -63,9 +73,11 @@
 
 /* Cubitos */
 .day-box {
-  width: 2.5vh;
-  height: 2.5vh;
-  margin: 0.4vh;
+  /* width: 2.5v;
+  height: 2.5vh; */
+  width: 1vw;
+  height: 1vw;
+  margin: 0.2vw;
   background-color: #3a3a3a;
   border-radius: 3px;
   position: relative;
@@ -113,6 +125,7 @@ h1 {
   color: #ffffff;
   text-align: center;
   font-family: 'Arial', sans-serif;
+  font-size: 2.5vw;
 }
 
 .modal {
@@ -165,51 +178,7 @@ select:focus {
 
 /* MEDIA QUERY PARA MÓVILES (Pantallas más pequeñas) */
 @media (max-width: 768px) {
-  .tracker-container {
-    width: 100vw;
-    height: 100vh;
-    padding: 10px;
-  }
-
-  .grid-header {
-    width: 90%;
-    font-size: 12px;
-  }
-
-  .month-label {
-    font-size: 10px;
-  }
-
-  .grid-container {
-    width: 10%;
-  }
-
-  .week-labels {
-    font-size: 10px;
-  }
-
-  h1 {
-    font-size: 18px;
-  }
-
   button {
-    font-size: 14px;
-    padding: 0.5em 1em;
     color:aliceblue;
-  }
-
-  .modal {
-    width: 90%;
-    padding: 15px;
-  }
-
-  select {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .seccion-de-botones-modal button {
-    font-size: 14px;
-    padding: 0.5em 1em;
   }
 }

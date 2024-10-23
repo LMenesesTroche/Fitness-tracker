@@ -181,15 +181,15 @@ const ExerciseTracker = () => {
       <div className="rectangulo-importante">
       <div className="caja-nombres-meses">
         {months.map((month, index) => (
-          <div key={index} className="month-label">
+          <div key={index} className="texto-meses">
             {month}
           </div>
         ))}
       </div>
-      <div className="grid-container">
-        <div className="week-labels">
+      <div className="texto-semanas-y-cubitos">
+        <div className="contenedor-del-texto-dias">
           {daysInWeek.map((day, index) => (
-            <div key={index} className="day-label">
+            <div key={index} className="texto-dias">
               {day}
             </div>
           ))}
