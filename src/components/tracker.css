@@ -1,5 +1,4 @@
-/* CSS General */
-.tracker-container {
+.contenedor-del-componente {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,17 +9,23 @@
   height: 100vh;
   background-color: #242424;
 }
+.rectangulo-importante{
+  width: 77.5%;
+  /* background-color: chartreuse; */
+}
 
 /* Caja de los nombres de los meses */
-.grid-header {
+.caja-nombres-meses {
   display: flex;
   justify-content: space-between;
-  width: 75%;
+  width: 97%;
+  /* background-color: #ff0000; */
+  margin-left: auto; /* Empuja el contenedor hacia la derecha */
 }
 
 /* Los nombres de los meses */
 .month-label {
-  width: calc(100% / 12);
+  width: calc(97% / 12);
   text-align: center;
   font-weight: bold;
 }
@@ -176,17 +181,11 @@ select:focus {
   }
 
   .grid-container {
-    width: 100%;
+    width: 10%;
   }
 
   .week-labels {
     font-size: 10px;
-  }
-
-  .day-box {
-    width: 3.5vh;
-    height: 3.5vh;
-    margin: 0.2vh;
   }
 
   h1 {

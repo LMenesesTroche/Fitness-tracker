@@ -176,9 +176,10 @@ const ExerciseTracker = () => {
   };
 
   return (
-    <div className="tracker-container">
+    <div className="contenedor-del-componente">
       <h1>Fitness Tracker</h1>
-      <div className="grid-header">
+      <div className="rectangulo-importante">
+      <div className="caja-nombres-meses">
         {months.map((month, index) => (
           <div key={index} className="month-label">
             {month}
@@ -219,7 +220,6 @@ const ExerciseTracker = () => {
           ))}
         </div>
       </div>
-
       {showModal && (
         <div className="modal">
           <div className="modal-content">
@@ -248,6 +248,8 @@ const ExerciseTracker = () => {
           </div>
         </div>
       )}
+      </div>
+
       <button className="mark-today-btn" onClick={markToday}>
         Marcar Hoy
       </button>
