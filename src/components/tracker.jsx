@@ -51,7 +51,7 @@ const customStyles = {
     backgroundColor: state.isSelected // Si la opción está seleccionada, se aplica el color de fondo morado
       ? "#5a53cf" // Color de fondo para la opción seleccionada (morado neón)
       : "#1a1a1a", // Color de fondo para las opciones no seleccionadas (negro oscuro)
-   
+
     // Puedes modificar otras propiedades aquí como `padding`, `border`, o agregar efectos como hover:
     // Ejemplo: agregar un hover effect
     ":hover": { backgroundColor: "#323232" }, // Cambiar el fondo al pasar el mouse
@@ -151,23 +151,21 @@ const ExerciseTracker = () => {
   };
 
   const handleSubmit = () => {
-  const { week, day } = modalData;
-  
-  // Verificar si hay un ejercicio seleccionado antes de registrar el día
-  if (selectedExercise) {
-    handleDayClick(week, day);
-  } else {
-    alert("Selecciona un tipo de ejercicio.");
-  }
+    const { week, day } = modalData;
 
-  setShowModal(false); // Ocultar el modal después de confirmar
-};
+    // Verificar si hay un ejercicio seleccionado antes de registrar el día
+    if (selectedExercise) {
+      handleDayClick(week, day);
+    } else {
+      alert("Selecciona un tipo de ejercicio.");
+    }
 
+    setShowModal(false); // Ocultar el modal después de confirmar
+  };
 
   return (
     <div className="tracker-container">
       <h1>Fitness Tracker</h1>
-
       <div className="grid-header">
         {months.map((month, index) => (
           <div key={index} className="month-label">
@@ -210,7 +208,6 @@ const ExerciseTracker = () => {
         </div>
       </div>
 
-      {/* Modal para la selección o edición del ejercicio */}
       {showModal && (
         <div className="modal">
           <div className="modal-content">
@@ -225,10 +222,10 @@ const ExerciseTracker = () => {
               placeholder="Seleccionar"
               value={options.find(
                 (option) => option.value === selectedExercise
-              )} // Establece el valor seleccionado
+              )}
               onChange={(selectedOption) =>
                 setSelectedExercise(selectedOption.value)
-              } // Actualiza el estado cuando el usuario selecciona una opción
+              }
             />
             <div className="seccion-de-botones-modal">
               <button onClick={handleSubmit}>Confirmar</button>

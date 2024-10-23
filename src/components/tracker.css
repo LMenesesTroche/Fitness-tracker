@@ -1,17 +1,13 @@
 /* CSS General */
 .tracker-container {
   display: flex;
-  /* Lo de abajo es para ordenar los elementos del contenedor de forma vertical */
-  flex-direction: column; 
-  /* Alinearlos al centro */
+  flex-direction: column;
   align-items: center;
-  /* Los siguientes cuatro son para ponerlo bien al centro dentro del contendor de todo */
-  position: relative; /* Añadido */
+  position: relative;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* Color de fondo */
   background-color: #242424;
 }
 
@@ -19,12 +15,7 @@
 .grid-header {
   display: flex;
   justify-content: space-between;
-  /* Creo que esto sera muy util para alinearlos */
   width: 75%;
-  /* margin-left: 1%; */
-  /* Color de fondo */
-
-  /* background-color: #4caf50; */
 }
 
 /* Los nombres de los meses */
@@ -32,7 +23,6 @@
   width: calc(100% / 12);
   text-align: center;
   font-weight: bold;
-  /* padding: 10px; */
 }
 
 /* Contenedor de nombres de semanas y cubitos */
@@ -40,8 +30,6 @@
   display: flex;
   flex-direction: row;
   width: 80%;
-  /* background-color: #646cff; */
-  left: 0;
 }
 
 /* COntenedor de los nombres de los dias  */
@@ -49,9 +37,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* Esto es para darle un poco de espacio entre los nomrbes de las semanas y los cubitos */
   padding-right: 1%;
-  /* background-color: beige; */
 }
 
 /* Nombres de los dias */
@@ -63,23 +49,19 @@
 .weeks-grid {
   display: flex;
   flex-grow: 100;
-  /* background-color: blue; */
 }
 
 .week-column {
-  /* width: 80%; */
   display: flex;
   flex-direction: column;
-  /* background-color: #4caf50; */
 }
 
-/* CUbitos */
+/* Cubitos */
 .day-box {
   width: 2.5vh;
   height: 2.5vh;
   margin: 0.4vh;
-  /* background-color: #e0e0e0; */
-  background-color: #3a3a3a; /* Fondo oscuro para los días */
+  background-color: #3a3a3a;
   border-radius: 3px;
   position: relative;
   transition: background-color 0.3s;
@@ -87,34 +69,18 @@
 }
 
 .day-box:hover {
-  transform: scale(1.1); /* Efecto hover que agranda el cubo */
+  transform: scale(1.1);
 }
 
 .day-box.active {
-  /* background-color: #4caf50; */
-  /* background-color: #823fff; */
-  background-color: #6e66ff; /* Morado neón para días activos */
-  box-shadow: 0 0 3px #7972ff; /* Efecto de neón */
+  background-color: #6e66ff;
+  box-shadow: 0 0 3px #7972ff;
 }
-
-
 
 .day-box:hover {
-  /* background-color: #90caf9; */
-  background-color: #a87aff;
   background-color: #5a53cf;
-
 }
 
-/* Arreglar esto */
-.reset-btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Arreglar esto */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -123,7 +89,6 @@ button {
   margin-right: 8px;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -140,21 +105,20 @@ button:focus-visible {
 }
 
 h1 {
-  color: #ffffff; /* Tono morado neón para el título */
-  text-align: center; /* Alinear al centro */
-  font-family: 'Arial', sans-serif; /* Elige una fuente adecuada */
-  }
-
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
 
 .modal {
   position: fixed;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #222; /* Fondo oscuro */
+  background-color: #222;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 15px #6e66ff; /* Sombra neón morada */
+  box-shadow: 0 0 15px #6e66ff;
 }
 
 .modal-content h2 {
@@ -163,7 +127,7 @@ h1 {
 
 select {
   background-color: #1a1a1a;
-  color: #ffffff; /* Texto morado neón */
+  color: #ffffff;
   border: 1px solid #6f67ff;
   padding: 10px;
   border-radius: 8px;
@@ -173,18 +137,69 @@ select {
   transition: all 0.3s ease;
 }
 
-select:hover, select:focus {
-  border-color: #6f67ff; /* Cambia a otro tono de morado neón al enfocarse */
+select:hover,
+select:focus {
+  border-color: #6f67ff;
 }
 
-.seleccionar {
-  font-size: larger;
-}
-
-.seccion-de-botones-modal{
+.seccion-de-botones-modal {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* background-color: #646cff; */
 }
 
+/* MEDIA QUERY PARA MÓVILES (Pantallas más pequeñas) */
+@media (max-width: 768px) {
+  .tracker-container {
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+  }
+
+  .grid-header {
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .month-label {
+    font-size: 10px;
+  }
+
+  .grid-container {
+    width: 100%;
+  }
+
+  .week-labels {
+    font-size: 10px;
+  }
+
+  .day-box {
+    width: 3.5vh;
+    height: 3.5vh;
+    margin: 0.2vh;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 0.5em 1em;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 15px;
+  }
+
+  select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .seccion-de-botones-modal button {
+    font-size: 14px;
+    padding: 0.5em 1em;
+  }
+}
