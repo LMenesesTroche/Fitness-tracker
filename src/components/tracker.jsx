@@ -22,11 +22,11 @@ const weeksInYear = 52;
 
 const options = [
   { value: "", label: "Seleccionar" },
-  { value: "Hombros", label: "Hombros" },
-  { value: "Piernas", label: "Piernas" },
-  { value: "Espalda", label: "Espalda" },
-  { value: "Cardio", label: "Cardio" },
-  { value: "descanso", label: "Descanso" },
+  { value: "0", label: "Descanso" },
+  { value: "1", label: "Hombros" },
+  { value: "2", label: "Espalda" },
+  { value: "3", label: "Piernas" },
+  { value: "4", label: "Cardio" },
 ];
 
 const customStyles = {
@@ -78,6 +78,8 @@ const ExerciseTracker = () => {
     if (storedData) {
       setExerciseDays(JSON.parse(storedData));
     }
+    console.log(storedData)
+    // localStorage.clear()
   }, []);
 
 
@@ -132,6 +134,14 @@ const ExerciseTracker = () => {
     }
   };
   
+  //Esto convierte los numeros en strings para mostrarlos en pantalla
+  const getEjercicio = (weekIndex, dayIndex) => {
+    const ejercicioCode = exerciseDays[weekIndex][dayIndex].exercise;
+    const option = options[parseInt(ejercicioCode, 10)];
+    return option ? option.label : "Ejercicio no definido"; // Manejo de casos no definidos
+};
+
+
 
   return (
     <div className="contenedor-del-componente">
@@ -161,15 +171,15 @@ const ExerciseTracker = () => {
                     className={`day-box ${
                       exerciseDays[weekIndex] && exerciseDays[weekIndex][dayIndex]
                         ? exerciseDays[weekIndex][dayIndex].exercise ===
-                          "Descanso"
+                          "0"
                           ? "rest-day"
                           : "active"
                         : ""
                     }`}
                     onClick={() => handleCubeClick(weekIndex, dayIndex)}
-                    title={
+                    title={  
                       exerciseDays[weekIndex] && exerciseDays[weekIndex][dayIndex]
-                        ? `${exerciseDays[weekIndex][dayIndex].date} "${exerciseDays[weekIndex][dayIndex].exercise}"`
+                        ? `${exerciseDays[weekIndex][dayIndex].date} "${getEjercicio(weekIndex,dayIndex)}"`
                         : getDayOfWeekDate(weekIndex, dayIndex)
                     }
                   />
