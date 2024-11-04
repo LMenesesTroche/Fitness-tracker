@@ -78,7 +78,7 @@ const ExerciseTracker = () => {
     if (storedData) {
       setExerciseDays(JSON.parse(storedData));
     }
-    console.log(storedData)
+    console.log(JSON.parse(storedData))
     // localStorage.clear()
   }, []);
 
@@ -136,12 +136,17 @@ const ExerciseTracker = () => {
   
   //Esto convierte los numeros en strings para mostrarlos en pantalla
   const getEjercicio = (weekIndex, dayIndex) => {
+    const ejercicioMap = {
+        "0": "Descanso",
+        "1": "Hombros",
+        "2": "Espalda",
+        "3": "Piernas",
+        "4": "Cardio"
+    };
+
     const ejercicioCode = exerciseDays[weekIndex][dayIndex].exercise;
-    const option = options[parseInt(ejercicioCode, 10)];
-    return option ? option.label : "Ejercicio no definido"; // Manejo de casos no definidos
+    return ejercicioMap[ejercicioCode] || "Ejercicio no definido"; // Manejo de casos no definidos
 };
-
-
 
   return (
     <div className="contenedor-del-componente">
