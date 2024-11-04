@@ -74,28 +74,50 @@ const ExerciseTracker = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const storedData = localStorage.getItem("exerciseDays");
-    if (storedData) {
-      setExerciseDays(JSON.parse(storedData));
-    }
-    console.log(JSON.parse(storedData))
-    // localStorage.clear()
-  }, []);
-
-
-
-  const handleDayClick = (week, day) => {
-    const updatedDays = { ...exerciseDays };
-    if (!updatedDays[week]) {
-      updatedDays[week] = {};
-    }
-    updatedDays[week][day] = {
-      date: getDayOfWeekDate(week, day),
-      exercise: selectedExercise,
+    const fetchData = async () => {
+      const { data, error } = await supabase.from('exercise_days').select('*');
+      if (error) {
+        console.error("Error fetching data:", error);
+      } else {
+        // Transformar los datos a un formato adecuado para el estado
+        const formattedData = data.reduce((acc, { week, day, date, exercise }) => {
+          if (!acc[week]) {
+            acc[week] = {};
+          }
+          acc[week][day] = { date, exercise };
+          return acc;
+        }, {});
+  
+        setExerciseDays(formattedData);
+      }
     };
-    setExerciseDays(updatedDays);
-    localStorage.setItem("exerciseDays", JSON.stringify(updatedDays));
+  
+    fetchData();
+  }, []);
+  
+  
+
+
+  const handleDayClick = async (week, day) => {
+    const date = getDayOfWeekDate(week, day);
+    const { data, error } = await supabase
+      .from('exercise_days')
+      .upsert({
+        week: week,
+        day: day,
+        date: date,
+        exercise: selectedExercise
+      });
+  
+    if (error) {
+      console.error("Error saving data:", error);
+    } else {
+      const updatedDays = { ...exerciseDays, [week]: { ...exerciseDays[week], [day]: { date, exercise: selectedExercise } } };
+      setExerciseDays(updatedDays);
+      localStorage.setItem("exerciseDays", JSON.stringify(updatedDays)); // Opcional, si aún deseas guardar en localStorage.
+    }
   };
+  
   
 
   const getDayOfWeekDate = (weekIndex, dayIndex) => {
